@@ -1,15 +1,15 @@
 --[[
 	Streets Mod: All kinds of asphalt
 ]]
-minetest.register_node(":streets:asphalt",{
+core.register_node(":streets:asphalt",{
 	description = streets.S("Asphalt"),
 	tiles	= {"streets_asphalt.png"},
 	groups	= {cracky=3},
 	is_ground_content = false,
 })
 
-if minetest.get_modpath("building_blocks") then
-	minetest.register_craft({
+if core.get_modpath("building_blocks") then
+	core.register_craft({
 		type = "shapeless",
 	    output = "streets:asphalt 3",
 	    recipe = {
@@ -19,7 +19,7 @@ if minetest.get_modpath("building_blocks") then
 	    },
 	})
 else
-	minetest.register_craft({
+	core.register_craft({
 		type = "cooking",
 		output	= "streets:asphalt",
 		recipe 	= "default:gravel",
